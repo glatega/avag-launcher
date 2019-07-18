@@ -1,12 +1,24 @@
+package src.Aircraft;
+
+import src.Concomitants.CustomException;
+
 public class Coordinates {
     private int longitude;
     private int latitude;
     private int height;
 
-    Coordinates(int longitude, int latitude, int height) {
-        setLongitude(longitude);
-        setLatitude(latitude);
-        setHeight(height);
+    Coordinates(int longitude, int latitude, int height) throws CustomException {
+        if (longitude < 0) {
+            throw new CustomException("Scenario Error: Negative Longitude");
+        } else if (latitude < 0) {
+            throw new CustomException("Scenario Error: Negative Latitude");
+        } else if (height < 0) {
+            throw new CustomException("Scenario Error: Negative Height");
+        } else {
+            setLongitude(longitude);
+            setLatitude(latitude);
+            setHeight(height);
+        }
     }
 
     public int getLongitude() {

@@ -1,3 +1,7 @@
+package src.Towers;
+
+import src.Aircraft.Coordinates;
+
 public class WeatherProvider {
     static private WeatherProvider weatherProvider;
     static private String[] weather;
